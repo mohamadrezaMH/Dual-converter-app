@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linear Programming Project | Mohamadreza_mh</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../static/css/styles.css" />
+  <body>
+    <div class="container">
+      <h2 class="text-center">Linear Programming Final Project</h2>
+
+      <!-- Step 1: Input number of variables and constraints -->
+      <div id="step1" class="step">
+        <h3>Step 1: Enter number of variables and constraints</h3>
+        <div class="form-group">
+          <label for="num-variables">Number of variables:</label>
+          <input
+            type="number"
+            id="num-variables"
+            class="form-control"
+            min="1"
+            required />
+        </div>
+        <div class="form-group">
+          <label for="num-constraints">Number of constraints:</label>
+          <input
+            type="number"
+            id="num-constraints"
+            class="form-control"
+            min="1"
+            required />
+        </div>
+        <button id="next-step1" style="margin-top: 10px;" class="btn btn-primary">Next Step</button>
+      </div>
+
+      <!-- Step 2: Define objective function -->
+      <div id="step2" class="step">
+        <h3>Step 2: Enter objective function</h3>
+        <div class="form-group">
+          <label for="objective-type">Objective Type:</label>
+          <select id="objective-type" class="form-control" style="margin-bottom: 10px;">
+            <option value="max">Maximization</option>
+            <option value="min">Minimization</option>
+          </select>
+        </div>
+        <div id="variable-coefficients"></div>
+        <button style="margin-top: 10px;" id="next-step2" class="btn btn-primary">Next Step</button>
+      </div>
+
+      <!-- Step 3: Define constraints -->
+      <div id="step3" class="step">
+        <h3>Step 3: Enter constraints</h3>
+        <div id="constraints-inputs"></div>
+        <div id="variable-signs-inputs"></div>
+        <button style="margin-top: 10px;" id="compute-dual" class="btn btn-success">
+          Compute Dual Problem
+        </button>
+        
+      </div>
+
+
+
+      <!-- Dual Problem Display -->
+      <div id="dual-problem" class="mt-4">
+        <h4>Dual Problem :</h4>
+        <br />
+        <p id="dual-output"></p>
+        <div class=" mt-4 row">
+          <div class="col col-6 mkcntr">
+            <button style="margin-top: 10px; padding: auto;" id="solve_primal" class="btn btn-success">
+              solve Primal Problem
+            </button>
+          </div>
+          <div class="col col-6 mkcntr">
+            <button style="margin-top: 10px;" id="solve_dual" class="btn btn-success">
+              solve Dual Problem
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col col-6 mkcntr">
+          <!-- Solve primal problem -->
+      <div id="solution-output" style="display: none; margin-top: 20px">
+        <h4>Primal Optimal Solution:</h4>
+        <ul id="solution-list"></ul>
+        <h4>Primal Objective Value:</h4>
+        <p id="objective-value"></p>
+      </div>
+      </div>
+        <div class="col col-6 mkcntr">
+          <!-- solve dual problem -->
+      <div id="dual-solution-output" style="display: none; margin-top: 20px">
+        <h4>Dual Optimal Solution:</h4>
+        <ul id="dual-solution-list"></ul>
+        <h4>Dual Objective Value:</h4>
+        <p id="dual-objective-value"></p>
+      </div>
+        </div>
+      </div>  
+    </div>
+
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/script.js"></script>
+  </body>
+</html>
